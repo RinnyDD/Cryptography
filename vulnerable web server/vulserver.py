@@ -7,7 +7,7 @@ import json
 
 app = Flask(__name__)
 
-KEY = b'123456789abcdef'
+KEY = b'0123456789abcdef'
 BLOCK_SIZE = 16
 
 def get_cipher(iv):
