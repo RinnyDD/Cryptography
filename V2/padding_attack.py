@@ -4,8 +4,8 @@
 import base64
 import requests
 
-URL = "http://localhost:8080/dashboard"
-LOGIN_URL = "http://localhost:8080/login"
+URL = "http://localhost:8090/dashboard"
+LOGIN_URL = "http://localhost:8090/login"
 BLOCK_SIZE = 16
 
 def oracle(cookie_b64: str) -> bool:
@@ -212,7 +212,7 @@ if __name__ == "__main__":
     
     if cookie is None:
         print("[!] Error: Failed to retrieve session cookie")
-        print("[!] Make sure the server is running at http://localhost:8080")
+        print("[!] Make sure the server is running at http://localhost:8090")
         exit(1)
     
     print(f"[✓] Session cookie obtained")

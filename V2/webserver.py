@@ -7,7 +7,7 @@ import json
 
 app = Flask(__name__)
 
-KEY = b'123456789abcdef0'
+KEY = b'Kampuchea@jmThai'  # 16-byte AES key
 BLOCK_SIZE = 16
 FLAG = "PADDING_ORACLE_MASTER_{}".format(os.urandom(8).hex().upper())
 
@@ -107,7 +107,7 @@ def dashboard():
         data = json.loads(plaintext.decode())
         
         # CBC BIT-FLIPPING VULNERABILITY
-        if data.get("role") == "admin":
+        if data.get("role") == "root":
             return f"""
             <!DOCTYPE html>
             <html>
@@ -200,7 +200,7 @@ if __name__ == "__main__":
     print("="*70)
     print("VULNERABLE WEB SERVER STARTING")
     print("="*70)
-    print(f"Server: http://localhost:8080")
+    print(f"Server: http://localhost:8090")
     print(f"Flag: {FLAG}")
     print("="*70)
-    app.run(host="0.0.0.0", port=8080, debug=False)
+    app.run(host="0.0.0.0", port=8090, debug=False)
